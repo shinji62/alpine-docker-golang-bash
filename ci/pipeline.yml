@@ -19,6 +19,7 @@ jobs:
     params:
       build: alpine-docker-golang-bash/
       tag: version/number
+      tag_as_latest: true
   - put: alpine-docker-golang-bash 
     params: 
       only_tag: true
@@ -35,7 +36,7 @@ resources:
     private_key: {{private-key-github-concourse}}
 
 - name: alpine-bash-docker-image
-  type: docker-image
+  type: gwenn-docker-image
   source:
     repository: getourneau/alpine-golang-bash
     email: {{email-docker-hub}}
@@ -64,3 +65,8 @@ resource_types:
   type: docker-image
   source:
     repository: getourneau/semver-resource
+
+- name: gwenn-docker-image
+  type: docker-image
+  source:
+    repository: getourneau/docker-image-resource
