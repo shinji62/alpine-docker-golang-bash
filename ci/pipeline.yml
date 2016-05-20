@@ -7,8 +7,7 @@ jobs:
   - aggregate:
     - get: golang-alpine-docker-image
       trigger: true
-      params:
-        skip_download: true
+      params: {save: true}
     - get: alpine-docker-golang-bash
       trigger: true
   - put: version
@@ -20,6 +19,7 @@ jobs:
       build: alpine-docker-golang-bash/
       tag: version/number
       tag_as_latest: true
+      load_base: golang-alpine-docker-image
   - put: alpine-docker-golang-bash 
     params: 
       only_tag: true
