@@ -1,5 +1,5 @@
 # alpine-docker-golang-bash
-Alpine docker golang 1.6 image with  bash
+Alpine docker golang 1.8 image with  bash
 
 
-Require Concourse >= 1.2.0 
+Require Concourse >= 1.2.0
