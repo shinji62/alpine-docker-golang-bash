@@ -1,4 +1,4 @@
-FROM golang:1.8-alpine
+FROM golang:1.9-alpine
 
 MAINTAINER Gwenn Etourneau <gwenn.etourneau@gmail.com>
 
